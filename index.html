@@ -3,18 +3,22 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Game Plan RPG</title>
+    <title>Life Sim RPG</title>
     <style>
-      html, body { margin: 0; padding: 0; background: #111; color: #eee;
-        font-family: system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
-        overflow: hidden; }
-      #game { width: 100vw; height: 100vh; display: flex;
-        align-items: center; justify-content: center; }
-      canvas { display: block; image-rendering: pixelated; }
+      *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+      html, body { width: 100%; height: 100%; overflow: hidden; background: #111; }
+      #game { position: fixed; inset: 0; }
+      #game canvas { display: block; width: 100% !important; height: 100% !important; }
+      #hud {
+        position: fixed; inset: 0; pointer-events: none;
+        font-family: system-ui, -apple-system, sans-serif;
+        color: #eee;
+      }
     </style>
   </head>
   <body>
     <div id="game"></div>
+    <div id="hud"></div>
     <script type="module" src="/src/main.ts"></script>
   </body>
 </html>
